@@ -7,6 +7,7 @@ const DEFAULT_JSON_FILE = "LeechBlockOptions-#.json";
 
 const SUB_OPTIONS = {
 	"applyFilter" : [ "filterName", "filterMute", "filterCustom" ],
+	"closeModeEnabled" : [ "closeMode" ],
 	"allowOverride" : [ "allowOverLock" ]
 };
 
