@@ -1,3 +1,7 @@
+# Version 1.8.0 (10 Mar 2026)
+* Added option to count time spent on allowed sites (exceptions).
+* Added option to go back or close tab instead of showing the blocking page.
+
 # Version 1.7.2 (04 Jan 2026)
 * Added option to specify minimum block time.
 * Added option to block only first accessed page of block set.
