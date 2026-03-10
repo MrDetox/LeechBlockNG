@@ -596,6 +596,7 @@ function checkTab(id, isBeforeNav, isRepeat) {
 			let filterMute = gOptions[`filterMute${set}`];
 			let filterCustom = gOptions[`filterCustom${set}`];
 			let closeTab = gOptions[`closeTab${set}`];
+			let goBack = gOptions[`goBack${set}`];
 			let activeBlock = gOptions[`activeBlock${set}`];
 			let minBlock = gOptions[`minBlock${set}`];
 			let titleOnly = gOptions[`titleOnly${set}`];
@@ -710,6 +711,27 @@ function checkTab(id, isBeforeNav, isRepeat) {
 					if (closeTab) {
 						// Close tab
 						browser.tabs.remove(id);
+					} else if (goBack) {
+						// Go back
+						browser.tabs.goBack(id).catch(
+							function (error) {
+								gTabs[id].keyword = keyword;
+
+								if (browser.history && addHistory && !isInternalPage) {
+									// Add blocked page to browser history
+									browser.history.addUrl({ url: pageURLWithHash });
+								}
+
+								// Get final URL for block page
+								blockURL = getLocalizedURL(blockURL)
+										.replace(/\$K/g, keyword ? keyword : "")
+										.replace(/\$S/g, set)
+										.replace(/\$U/g, pageURLWithHash);
+
+								// Redirect page
+								browser.tabs.update(id, { url: blockURL });
+							}
+						);
 					} else if (applyFilter) {
 						gTabs[id].filterSet = set;
 

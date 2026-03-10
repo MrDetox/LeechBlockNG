@@ -51,6 +51,7 @@ const PER_SET_OPTIONS = {
 	filterMute: { type: "boolean", def: false, id: "filterMute" },
 	filterCustom: { type: "string", def: "", id: "filterCustom" },
 	closeTab: { type: "boolean", def: false, id: "closeTab" },
+	goBack: { type: "boolean", def: false, id: "goBack" },
 	activeBlock: { type: "boolean", def: false, id: "activeBlock" },
 	minBlock: { type: "string", def: "", id: "minBlock" },
 	countFocus: { type: "boolean", def: true, id: "countFocus" },
