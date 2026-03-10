@@ -231,13 +231,15 @@
 								<input id="filterCustom1" type="text" size="25" placeholder="Example: grayscale(50%)">
 								&nbsp;&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/filter" target="_blank">What can I enter here?</a>
 							</p>
-							<p>
-								<input id="closeTab1" type="checkbox">
-								<label for="closeTab1">Close tab instead of blocking page</label>
-							</p>
-							<p>
-								<input id="goBack1" type="checkbox">
-								<label for="goBack1">Go back to previous page instead of blocking page</label>
+							<p class="simplifiable">
+								<input id="closeModeEnabled1" type="checkbox">
+								<label for="closeModeEnabled1">
+									<select id="closeMode1">
+										<option value="1">Close the tab</option>
+										<option value="2">Go back to the previous page</option>
+									</select>
+									instead of showing the blocking page
+								</label>
 							</p>
 							<p>
 								<input id="activeBlock1" type="checkbox">

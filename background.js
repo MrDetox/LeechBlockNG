@@ -595,8 +595,8 @@ function checkTab(id, isBeforeNav, isRepeat) {
 			let filterName = gOptions[`filterName${set}`];
 			let filterMute = gOptions[`filterMute${set}`];
 			let filterCustom = gOptions[`filterCustom${set}`];
-			let closeTab = gOptions[`closeTab${set}`];
-			let goBack = gOptions[`goBack${set}`];
+			let closeModeEnabled = gOptions[`closeModeEnabled${set}`];
+			let closeMode = gOptions[`closeMode${set}`];
 			let activeBlock = gOptions[`activeBlock${set}`];
 			let minBlock = gOptions[`minBlock${set}`];
 			let titleOnly = gOptions[`titleOnly${set}`];
@@ -708,10 +708,10 @@ function checkTab(id, isBeforeNav, isRepeat) {
 						// Enforce minimum block time
 						timedata[8] = now + (minBlock * 60);
 					}
-					if (closeTab) {
+					if (closeModeEnabled && closeMode == "1") {
 						// Close tab
 						browser.tabs.remove(id);
-					} else if (goBack) {
+					} else if (closeModeEnabled && closeMode == "2") {
 						// Go back
 						browser.tabs.goBack(id).catch(
 							function (error) {
